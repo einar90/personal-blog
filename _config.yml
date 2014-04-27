@@ -1,0 +1,6 @@
+name: Einar's blog 
+markdown: redcarpet
+pygments: true
+
+source: ./src
+destination: ./build
