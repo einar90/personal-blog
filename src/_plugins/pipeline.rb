@@ -1,9 +1,15 @@
 require 'jekyll_asset_pipeline'
+require 'compass'
+require 'zurb-foundation'
 
 module JekyllAssetPipeline
 
   # process SCSS files
   class SassConverter < JekyllAssetPipeline::Converter
+
+    Compass.sass_engine_options[:load_paths].each do |path|
+      Sass.load_paths << path
+    end
 
     Compass.configuration.sass_dir = 'src/_assets/css'
 
